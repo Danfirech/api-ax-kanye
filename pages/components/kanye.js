@@ -1,11 +1,25 @@
 import React from "react";
 import axios from "axios";
 
-const axios = require("axios");
+export default class Kanyequotes extends React.Component {
+  state = {
+    quotes: [],
+  };
 
-axios({
-  method: get,
-  url: "https://api.kanye.rest/",
-}).then(function (resposne) {
-  console.log(response.data);
-});
+  componentDidMount() {
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
+      const quotes = res.data;
+      this.setState({ quotes });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.quotes.map((quotes) => (
+          <h1 key={quotes.id}>{quotes.title}</h1>
+        ))}
+      </div>
+    );
+  }
+}
