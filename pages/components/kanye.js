@@ -5,7 +5,9 @@ const API = () => {
   const instanceData = () => {};
 
   const getData = () => {
-    axios.get("https://reqres.in/api/users");
+    axios
+      .get("https://reqres.in/api/users")
+      .then((res) => console.log(res.data));
   };
 
   const postData = () => {};
