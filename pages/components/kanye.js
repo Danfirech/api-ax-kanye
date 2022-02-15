@@ -1,25 +1,29 @@
 import React from "react";
 import axios from "axios";
 
-export default class Kanyequotes extends React.Component {
-  state = {
-    quotes: [],
-  };
+const API = () => {
+  const instanceData = () => {};
 
-  componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
-      const quotes = res.data;
-      this.setState({ quotes });
-    });
-  }
+  const getData = () => {};
 
-  render() {
-    return (
-      <div>
-        {this.state.quotes.map((quotes) => (
-          <h1 key={quotes.id}>{quotes.title}</h1>
-        ))}
-      </div>
-    );
-  }
-}
+  const postData = () => {};
+
+  const updateData = () => {};
+
+  const deleteData = () => {};
+
+  const multiple = () => {};
+
+  return (
+    <>
+      <button>GET</button>
+      <button>POST</button>
+      <button>UPDATE</button>
+      <button>DELETE</button>
+      <button>INSTANCE</button>
+      <button>MULTIPLE</button>
+    </>
+  );
+};
+
+export default API;
