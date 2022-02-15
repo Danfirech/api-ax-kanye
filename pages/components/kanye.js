@@ -4,7 +4,9 @@ import axios from "axios";
 const API = () => {
   const instanceData = () => {};
 
-  const getData = () => {};
+  const getData = () => {
+    axios.get("https://reqres.in/api/users");
+  };
 
   const postData = () => {};
 
@@ -16,12 +18,12 @@ const API = () => {
 
   return (
     <>
-      <button>GET</button>
-      <button>POST</button>
-      <button>UPDATE</button>
-      <button>DELETE</button>
-      <button>INSTANCE</button>
-      <button>MULTIPLE</button>
+      <button onClick={getData}>GET</button>
+      <button onClick={postData}>POST</button>
+      <button onClick={updateData}>UPDATE</button>
+      <button onClick={deleteData}>DELETE</button>
+      <button onClick={instanceData}>INSTANCE</button>
+      <button onClick={multiple}>MULTIPLE</button>
     </>
   );
 };
