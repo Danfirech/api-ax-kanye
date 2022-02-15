@@ -16,10 +16,21 @@ const API = () => {
         name: "John Doe",
         job: "junior Developer",
       })
-      .then((res) => console.log(res.data));
+      .then((res) => console.log(res.data))
+      .catch((res) => console.log(res));
   };
 
-  const updateData = () => {};
+  const updateData = async () => {
+    try {
+      const res = await axios.put("/2", {
+        name: "jane Doe",
+        job: "senior developer",
+      });
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const deleteData = () => {};
 
