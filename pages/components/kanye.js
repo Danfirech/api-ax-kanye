@@ -32,7 +32,9 @@ const API = () => {
     }
   };
 
-  const deleteData = () => {};
+  const deleteData = () => {
+    axios.delete("/2").then((res) => console.log(res.status));
+  };
 
   const multiple = () => {};
 
