@@ -2,15 +2,22 @@ import React from "react";
 import axios from "axios";
 
 const API = () => {
+  axios.defaults.baseURL = "https://reqres.in/api";
+
   const instanceData = () => {};
 
   const getData = () => {
-    axios
-      .get("https://reqres.in/api/users")
-      .then((res) => console.log(res.data));
+    axios.get("/users").then((res) => console.log(res.data.data));
   };
 
-  const postData = () => {};
+  const postData = () => {
+    axios
+      .post("/users", {
+        name: "John Doe",
+        job: "junior Developer",
+      })
+      .then((res) => console.log(res.data));
+  };
 
   const updateData = () => {};
 
